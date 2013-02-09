@@ -12,6 +12,12 @@ int main()
   cout << "MCS " << params.value_or_default<long>("MCS", 8192) << endl;
   if(params.defined("Flag"))
     cout << "\"Flag\" is defined." << endl;
+  
+  try{
+    params.value<double>("Hoge");
+  }catch (out_of_range &e){
+    cout << e.what() << endl;
+  }
 
 }
 

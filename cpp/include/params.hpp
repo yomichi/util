@@ -4,6 +4,7 @@
 #include <string>
 #include <map>
 #include <istream>
+#include <stdexcept>
 #include <boost/lexical_cast.hpp>
 
 namespace util{
@@ -21,8 +22,9 @@ public:
     const_iterator it = dict_.find(name);
     if(it!=dict_.end())
       return boost::lexical_cast<T>(it->second);
-    else
-      throw std::exception();
+    else{
+      throw std::out_of_range("Parameter "+std::string(name)+" is not defined.");
+    }
   }
 
   template<class T>
