@@ -1,3 +1,16 @@
+/**
+ * params.hpp
+ *
+ * Minimal parameter file reader.
+ * 
+ * Copyright (c) 2013 by Yuichi Motoyama <yomichi@tsg.jp>
+ *
+ * Distributed under the Boost Software License version 1.0.
+ * (See acompanied file License.txt or http://www.boost.org/LICENSE_1_0.txt)
+ *
+ */
+
+
 #ifndef PARAMS_HPP
 #define PARAMS_HPP
 

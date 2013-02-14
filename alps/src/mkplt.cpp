@@ -1,3 +1,15 @@
+/**
+ * mkplt.cpp
+ *
+ * make plot XML file for ALPS application (http://alps.comp-phys.org/)
+ *
+ * Copyright (c) 2013 by Yuichi Motoyama <yomichi@tsg.jp>
+ *
+ * Distributed under the Boost Software License version 1.0.
+ * (See acompanied file License.txt or http://www.boost.org/LICENSE_1_0.txt)
+ *
+ */
+
 #include <iostream>
 #include <string>
 #include <vector>
