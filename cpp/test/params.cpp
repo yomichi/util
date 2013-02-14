@@ -1,4 +1,4 @@
-#include "../include/params.hpp"
+#include "../include/util/params.hpp"
 
 int main()
 {
