@@ -1,11 +1,14 @@
 #include "../include/util/params.hpp"
 
-int main()
+int main(int argc, char **args)
 {
   using namespace std;
-  using namespace util;
   
-  Params params(cin);
+  util::Params params;
+  if(argc == 1)
+    params.load(std::cin);
+  else
+    params.load(args[1]);
 
   cout << "L " << params.value<int>("L") << endl;
   cout << "T " << params.value<double>("T") << endl;

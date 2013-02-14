@@ -16,7 +16,7 @@
 
 #include <string>
 #include <map>
-#include <istream>
+#include <fstream>
 #include <stdexcept>
 #include <boost/lexical_cast.hpp>
 
@@ -28,7 +28,30 @@ public:
   typedef typename map_type::iterator iterator;
   typedef typename map_type::const_iterator const_iterator;
 
-  Params(std::istream &is);
+  Params(){}
+  Params(std::istream &is){ load(is);}
+  Params(const char * filename)
+  {
+    std::ifstream ifs(filename);
+    load(ifs);
+  }
+  Params(std::string const &filename)
+  {
+    std::ifstream ifs(filename.c_str());
+    load(ifs);
+  }
+
+  void load(std::istream &is);
+  void load(const char* filename)
+  {
+    std::ifstream ifs(filename);
+    load(ifs);
+  }
+  void load(std::string const& filename)
+  {
+    std::ifstream ifs(filename.c_str());
+    load(ifs);
+  }
 
   template<class T>
   T value(const char* name) const {
@@ -67,7 +90,7 @@ private:
   map_type dict_;
 };
 
-Params::Params(std::istream &is)
+void Params::load(std::istream &is)
 {
   std::string buf;
   while(!is.eof()){
