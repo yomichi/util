@@ -31,8 +31,8 @@ public:
     sum2_ += val*val;
     return *this;
   }
-  value_type mean() const { return sum_/num_; }
-  value_type var()  const { return sum2_/num_ - pow2(mean()); }
+  value_type mean() const { return num_>0 ? sum_/num_ : 0.0/0.0; }
+  value_type var()  const { return num_>1 ? sum2_/num_ - pow2(mean()) : 1.0/0.0; }
   value_type error()const { return std::sqrt(var()/(num_-1)); }
   int count() const { return num_;}
 
